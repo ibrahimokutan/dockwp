@@ -4,7 +4,7 @@
     "name": "DockWP",
     "version": "1.0.0",
     "description": "Production-ready WordPress with Nginx, Redis caching, phpMyAdmin, and WP-CLI",
-    "logo": "logo.svg",
+    "logo": "blueprints/wordpress-redis-stack/logo.svg",
     "links": {
       "github": "https://github.com/ibrahimokutan/dockwp",
       "docs": "https://github.com/ibrahimokutan/dockwp#readme"

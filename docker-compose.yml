@@ -8,7 +8,7 @@ services:
     environment:
       - NGINX_CLIENT_MAX_BODY_SIZE=${NGINX_CLIENT_MAX_BODY_SIZE:-256M}
     volumes:
-      - wordpress_data:/var/www/html:ro
+      - /srv/apps/${COMPOSE_PROJECT_NAME:-wordpress}-wp:/var/www/html:ro
     depends_on:
       wordpress:
         condition: service_healthy
@@ -53,7 +53,7 @@ services:
       - PHP_OPCACHE_MAX_FILES=${PHP_OPCACHE_MAX_FILES:-4000}
       - PHP_OPCACHE_VALIDATE=${PHP_OPCACHE_VALIDATE:-0}
     volumes:
-      - wordpress_data:/var/www/html
+      - /srv/apps/${COMPOSE_PROJECT_NAME:-wordpress}-wp:/var/www/html
     depends_on:
       db:
         condition: service_healthy
@@ -123,7 +123,7 @@ services:
       context: ./plugin-installer
       dockerfile: Dockerfile
     volumes:
-      - wordpress_data:/var/www/html
+      - /srv/apps/${COMPOSE_PROJECT_NAME:-wordpress}-wp:/var/www/html
     depends_on:
       wordpress:
         condition: service_healthy
@@ -172,7 +172,5 @@ networks:
     driver: bridge
 
 volumes:
-  wordpress_data:
-    name: ${COMPOSE_PROJECT_NAME:-wordpress}_data
   db_data:
   redis_data:

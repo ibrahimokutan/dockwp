@@ -23,7 +23,7 @@ Production-ready WordPress deployment stack optimized for Dokploy with Redis cac
 4. Choose **Template**
 5. Set the **Base URL** to:
    ```
-   https://raw.githubusercontent.com/ibrahimokutan/wpstack/main
+   https://raw.githubusercontent.com/ibrahimokutan/dockwp/main
    ```
 6. You will find **"WordPress + Redis Stack"**
 7. Click **Create** and **Confirm**
@@ -35,7 +35,7 @@ Production-ready WordPress deployment stack optimized for Dokploy with Redis cac
 ### Option B: Manual Compose Deploy
 
 1. Create a new **Compose** service in Dokploy
-2. Point to: `https://github.com/ibrahimokutan/wpstack`
+2. Point to: `https://github.com/ibrahimokutan/dockwp`
 3. Set Compose Path: `./docker-compose.yml`
 4. Go to **Environment** tab and add:
    ```
