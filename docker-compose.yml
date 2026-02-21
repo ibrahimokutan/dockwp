@@ -1,5 +1,7 @@
 services:
   nginx:
+    labels:
+      - "traefik.docker.network=dokploy-network"
     image: ghcr.io/ibrahimokutan/dockwp-nginx:latest
     ports:
       - "80"
@@ -133,6 +135,8 @@ services:
         max_attempts: 3
 
   phpmyadmin:
+    labels:
+      - "traefik.docker.network=dokploy-network"
     image: phpmyadmin/phpmyadmin:latest
     environment:
       - PMA_HOST=db
